@@ -12,12 +12,31 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
     let url = '';
     let iconUrl = '';
 
+    let iconUrl3 = '';
+    let iconUrl6 = '';
+    let iconUrl9 = '';
+
+    let forecastDate3 = '';
+    let forecastDate6 = '';
+    let forecastDate9 = '';
+
+
     if (loadingData){
         return <Spinner />
     }
     if (showData){
         url = 'http://openweathermap.org/img/w/';
-        iconUrl = url + weather.weather[0].icon + '.png'
+        iconUrl = url + weather.weather[0].icon + '.png';
+
+        iconUrl3 = url + forecast.list[1].weather[0].icon + '.png';
+        iconUrl6 = url + forecast.list[2].weather[0].icon + '.png';
+        iconUrl9 = url + forecast.list[3].weather[0].icon + '.png';
+
+        forecastDate3 = forecast.list[1].dt_txt.substring(8,10) + '/' + forecast.list[1].dt_txt.substring(5, 7) + '/' + forecast.list[1].dt_txt.substring(0, 4) + ' ' + forecast.list[1].dt_txt.substring(11, 13);
+        forecastDate6 = forecast.list[2].dt_txt.substring(8,10) + '/' + forecast.list[2].dt_txt.substring(5, 7) + '/' + forecast.list[2].dt_txt.substring(0, 4) + ' ' + forecast.list[2].dt_txt.substring(11, 13);
+        forecastDate9 = forecast.list[3].dt_txt.substring(8,10) + '/' + forecast.list[3].dt_txt.substring(5, 7) + '/' + forecast.list[3].dt_txt.substring(0, 4) + ' ' + forecast.list[3].dt_txt.substring(11, 13);
+
+
     }
 
     return (
@@ -35,7 +54,7 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                     <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}°C</h1>
                                     <p className="card-desc"><img src={iconUrl} alt="icon" />{weather.weather[0].description}</p>
 
-                                    <img src="https://images.unsplash.com/photo-1512864733469-8c0d7cc3ccf5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://plus.unsplash.com/premium_photo-1680430094796-d2ac95f8bb9d?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="img-fluid rounded-start" alt="..."/>
 
                                 </div>
                                 <div className="col-md-8">
@@ -47,6 +66,24 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                         <h5 className="card-text">Velocidad del viento: {weather.wind.speed}m/s</h5>
                                     </div>
                                     <hr/>
+                                    <div className="row mt-4">
+                                        <div className="col">
+                                            <p>{forecastDate3}h</p>
+                                            <p className="description"><img src={iconUrl3} alt="icon"/>{forecast.list[1].weather[0].description} </p>
+                                            <p className="temp">{(forecast.list[1].main.temp - 273.15).toFixed(1)}°C</p>
+                                        </div>
+                                        <div className="col">
+                                            <p>{forecastDate6}h</p>
+                                            <p className="description"><img src={iconUrl6} alt="icon"/>{forecast.list[2].weather[0].description} </p>
+                                            <p className="temp">{(forecast.list[2].main.temp - 273.15).toFixed(1)}°C</p>
+                                        </div>
+                                        <div className="col">
+                                            <p>{forecastDate9}h</p>
+                                            <p className="description"><img src={iconUrl3} alt="icon"/>{forecast.list[3].weather[0].description} </p>
+                                            <p className="temp">{(forecast.list[3].main.temp - 273.15).toFixed(1)}°C</p>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
