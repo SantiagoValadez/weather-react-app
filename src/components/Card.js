@@ -54,7 +54,7 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                     <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}°C</h1>
                                     <p className="card-desc"><img src={iconUrl} alt="icon" />{weather.weather[0].description}</p>
 
-                                    <img src="https://plus.unsplash.com/premium_photo-1680430094796-d2ac95f8bb9d?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.unsplash.com/photo-1569243963117-78bb6e7ff948?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="img-fluid rounded-start" alt="..."/>
 
                                 </div>
                                 <div className="col-md-8">
@@ -79,7 +79,7 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                         </div>
                                         <div className="col">
                                             <p>{forecastDate9}h</p>
-                                            <p className="description"><img src={iconUrl3} alt="icon"/>{forecast.list[3].weather[0].description} </p>
+                                            <p className="description"><img src={iconUrl9} alt="icon"/>{forecast.list[3].weather[0].description} </p>
                                             <p className="temp">{(forecast.list[3].main.temp - 273.15).toFixed(1)}°C</p>
                                         </div>
 
