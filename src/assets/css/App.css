@@ -39,8 +39,12 @@ body {
   margin-top: 320px;
 }
 
-.form-control:focus{
-  border-color: rgb(122, 145, 215);
-  border-width: 3px;
-  background-color: rgba(227, 234, 227, 0.842);
+
+
+.card-temp{
+  padding-top: 50px;
+}
+
+.card-desc{
+  padding-top: 50px;
 }

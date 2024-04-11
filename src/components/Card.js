@@ -51,7 +51,7 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                 <div className="col-md-4">
                                     <h3 className="card-title">{weather.name}</h3>
                                     <p className="card-date">{date}</p>
-                                    <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}°C</h1>
+                                    <h1 className="card-temp">{(weather.main.temp ).toFixed(1)}°C</h1>
                                     <p className="card-desc"><img src={iconUrl} alt="icon" />{weather.weather[0].description}</p>
 
                                     <img src="https://images.unsplash.com/photo-1569243963117-78bb6e7ff948?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="img-fluid rounded-start" alt="..."/>
@@ -59,9 +59,9 @@ const Card = ({loadingData, showData, weather, forecast}) =>{
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body text-start mt-2">
-                                        <h5 className="card-text">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}°C</h5>
-                                        <h5 className="card-text">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}°C</h5>
-                                        <h5 className="card-text">Sensación térmica: {(weather.main.feels_like - 273.15).toFixed(1)}°C</h5>
+                                        <h5 className="card-text">Temperatura máxima: {(weather.main.temp_max ).toFixed(1)}°C</h5>
+                                        <h5 className="card-text">Temperatura mínima: {(weather.main.temp_min ).toFixed(1)}°C</h5>
+                                        <h5 className="card-text">Sensación térmica: {(weather.main.feels_like ).toFixed(1)}°C</h5>
                                         <h5 className="card-text">Humedad: {weather.main.humidity}%</h5>
                                         <h5 className="card-text">Velocidad del viento: {weather.wind.speed}m/s</h5>
                                     </div>
