@@ -12,21 +12,22 @@ const WeatherPanel = () =>{
     const [forecast, setForecast] = useState ([]);
     const [loading, setLoading] = useState (false);
     const [show, setShow] = useState (false);
-    const [location, setLocation] = useState ('');
+    // const [location, setLocation] = useState ('');
 
     const getLocation = async (loc) => {
+        console.log('datos recibidos', loc)
         setLoading(true);
-        setLocation (loc);
+        // setLocation(loc);
 
         //weather
 
-        urlWeather = urlWeather + cityUrl + loc;
-            console.log(urlWeather);
-        await fetch(urlWeather).then((response)=>{
-            if (!response.ok) throw {response}
+        const urlWeatherRequest = urlWeather + cityUrl + loc;
+            console.log(urlWeatherRequest);
+        await fetch(urlWeatherRequest).then((response)=>{
+            if (!response.ok) throw new Error("Algo salio mal weather")
             return response.json();
         }).then ((weatherData)=>{
-            console.log(weatherData);
+            console.log('datos ciudad', weatherData);
             setWeather(weatherData);
         }).catch(error =>{
             console.log(error);
@@ -38,7 +39,7 @@ const WeatherPanel = () =>{
 
         urlForecast = urlForecast + cityUrl + loc;
         await fetch(urlForecast).then((response)=>{
-            if (!response.ok) throw {response}
+            if (!response.ok) throw new Error('algo salio mal forecast')
             return response.json();
         }).then ((forecastData)=>{
             console.log(forecastData);
