@@ -1,0 +1,12 @@
+/* .form-control:focus */
+#btn{
+    border-color: rgb(122, 145, 215);
+    border-width: 1px;
+    background-color: rgb(57, 57, 247);
+  }
+
+#busqueda:focus{
+    border-color: rgb(122, 145, 215);
+    border-width: 3px;
+    background-color: rgba(227, 234, 227, 0.842);
+}
